@@ -1,0 +1,53 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>Angular Practice</title>
+    <script src="bower_components/angular/angular.min.js"></script>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <div ng-app="" ng-init='dishes=["car","bike","bicycle"]'>
+
+        <h1 ng-bind="title,title1"></h1>
+        Title:<input type="text" ng-model="title"><br><br> Title color:<input type="text" ng-model="title1"><br>
+        <p>Enter some Text:<input type="text" ng-model="someText"></p>
+        <p ng-bind="{{someText}}"></p>
+        <ul ng-repeat="x in dishes">
+            <li>{{x}}</li>
+
+
+        </ul>
+        <div ng-app="" ng-init="person={firstName='John',lastName='Doe'}">
+
+            <p>The full name is: {{person.firstName + " " + person.lastName}}</p>
+            <p>The full name is:<span ng-bind="person.firstName+''+person.lastName"></span></p>
+
+        </div>
+        <div ng-app="" ng-init="Num['abc','def','ghe']">
+            <p>my name is {{Num[2]}} </p>
+
+
+        </div>
+      
+<div ng-app="myApp" w3-test-directive></div>
+
+<script>
+
+var app = angular.module("myApp", []); 
+    app.directive("w3TestDirective", function() {
+    return {
+        template : "I was made in a directive constructor!"
+    };
+});
+
+</script>
+
+    </div>
+
+
+</body>
+
+</html>
